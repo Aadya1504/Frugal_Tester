@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frugal - Dynamic Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Frugal Testing — Dynamic Quiz</h1>
+      <div class="meta">
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="general">General Knowledge</option>
+          <option value="programming">Programming</option>
+          <option value="aptitude">Aptitude</option>
+        </select>
+
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="startBtn">Start Quiz</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="landing" class="panel">
+        <h2>Welcome!</h2>
+        <p>Select category and difficulty, then click Start Quiz.</p>
+      </section>
+
+      <section id="quiz" class="panel hidden">
+        <div class="question-top">
+          <div id="q-number"></div>
+          <div id="timer">Time left: <span id="time-left">--</span>s</div>
+        </div>
+
+        <div id="question-text" class="question"></div>
+        <div id="options" class="options"></div>
+
+        <div class="nav">
+          <button id="prevBtn" class="nav-btn">Previous</button>
+          <button id="nextBtn" class="nav-btn">Next</button>
+          <button id="submitBtn" class="nav-btn">Submit</button>
+        </div>
+      </section>
+
+      <section id="results" class="panel hidden">
+        <h2>Result Analysis</h2>
+        <div id="summary"></div>
+        <canvas id="chartTime" width="400" height="200"></canvas>
+        <canvas id="chartCorrect" width="400" height="200"></canvas>
+        <button id="restartBtn">Restart</button>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built for Frugal Testing assignment</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
